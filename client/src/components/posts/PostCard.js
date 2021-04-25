@@ -1,17 +1,24 @@
 import React from 'react'
-import { ThumbUpIcon, HeartIcon } from '@heroicons/react/solid'
 import { ThumbUpIcon as ThumbUpIconOutline, ChatIcon, ShareIcon } from '@heroicons/react/outline'
+import { Likes } from '../likes/Likes'
+import api from '../../services/api'
 
 export const PostCard = ({
+  id,
   sender,
   body,
   likes,
   attachments,
   comments
 }) => {
-  return (
 
-    <div className="bg-white rounded-lg shadow-md mb-4">
+  const addLike = async () => {
+    const res = await api.addLike(id);
+    console.log(res)
+  }
+
+  return (
+    <div className="card">
       <div className='p-4'>
         <div className='flex pb4'>
           <div className='avatar'>
@@ -28,9 +35,7 @@ export const PostCard = ({
       <div className='p-2'>
         <div className='flex pb-2 border-b'>
           <div className='flex flex-grow'>
-            <ThumbUpIcon className='text-white bg-blue-600 icon' />
-            <HeartIcon className='text-white bg-red-600 icon' />
-            <span className='ml-2'>{likes}</span>
+            <Likes postId={id} />
           </div>
 
           <div className='flex-shrink-0'>
@@ -39,7 +44,7 @@ export const PostCard = ({
         </div>
         <div className='flex p-1 border-b'>
           <div className="flex-1 flex hover:bg-gray-200 rounded-lg py-2">
-            <div className='m-auto'>
+            <div className='m-auto' onClick={addLike}>
               <ThumbUpIconOutline className='icon ' />
               Like
             </div>

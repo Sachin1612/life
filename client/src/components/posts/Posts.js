@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { PostCard } from './PostCard'
+import { NewPost } from './NewPost'
+import api from '../../services/api'
 
 export const Posts = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:8000/posts')
-      .then(res => res.json())
-      .then(data => setPosts(data))
-    return () => {
-
-    }
+    api.getPosts().then(res => setPosts(res))
   }, [])
 
   return (
     <div className="">
+      <NewPost />
       {posts.map(item => (
         <PostCard key={item.id} {...item} />
       ))}

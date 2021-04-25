@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+textarea {
+  @apply border-none
+}
+
 .avatar {
-  @apply rounded-full h-12 w-12 flex items-center justify-center bg-gray-100;
+  @apply rounded-full h-12 w-12 mr-2 flex items-center justify-center bg-gray-500 text-white;
 }
 
 .icon {
   @apply rounded-full h-6 w-6 p-1 inline-block;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md mb-4
 }

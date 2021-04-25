@@ -2,7 +2,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import { FeedLayout } from './components/feed/FeedLayout';
 import { Navbar } from './components/layouts/Navbar';
 import { NetworkLayout } from './components/network/NetworkLayout';
-import { CreatePost } from './components/posts/CreatePost';
+import { NewPost } from './components/posts/NewPost';
 import { Posts } from './components/posts/Posts';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Posts} />
             <Route exact path="/posts" component={Posts} />
-            <Route exact path="/post/create" component={CreatePost} />
+            <Route exact path="/post/create" component={NewPost} />
           </Switch>
         </div>
         <div className="md:col-span-1">
