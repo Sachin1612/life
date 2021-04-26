@@ -2,14 +2,16 @@ import React from 'react'
 import { ThumbUpIcon as ThumbUpIconOutline, ChatIcon, ShareIcon } from '@heroicons/react/outline'
 import { Likes } from '../likes/Likes'
 import api from '../../services/api'
+import { Comments } from '../comments/Comments'
+import { NewComment } from '../comments/NewComment'
 
 export const PostCard = ({
   id,
   sender,
   body,
-  likes,
-  attachments,
-  comments
+  likes = [],
+  attachments = [],
+  comments = []
 }) => {
 
   const addLike = async () => {
@@ -64,12 +66,9 @@ export const PostCard = ({
         </div>
 
         <div className=''>
-          {comments.map(c => (
-            <div>
-              {c.comment}
-            </div>
-          ))}
+          <Comments postId={id} />
         </div>
+        <NewComment postId={id} />
       </div>
     </div>
 

@@ -1,9 +1,19 @@
 import React, { useState } from 'react'
 import { VideoCameraIcon, PhotographIcon, EmojiHappyIcon } from '@heroicons/react/outline'
+import api from '../../services/api'
 
 export const NewPost = () => {
   // const [posts, setPosts] = useState([])
   const [body, setBody] = useState('')
+
+  const addPost = async () => {
+    await api.addPost({
+      senderId: 2,
+      body
+    })
+
+    setBody('')
+  }
 
   return (
     <>
@@ -16,10 +26,12 @@ export const NewPost = () => {
             .join('')}
         </div>
         <div className='flex-grow'>
-          <textarea className='w-full rounded-3xl border-none bg-gray-100' value={body} onChange={e => setBody(e.target.value)} />
+          <textarea className='w-full rounded-3xl border-none bg-gray-100 px-2 py-1'
+          value={body}
+          onChange={e => setBody(e.target.value)} />
         </div>
       </div>
-      <div className='flex pt-1 border-t'>
+      <div className='flex py-1 border-t'>
         <div className="flex-1 flex hover:bg-gray-200 rounded-lg py-2">
           <div className='m-auto'>
             <VideoCameraIcon className='icon' />
@@ -39,11 +51,13 @@ export const NewPost = () => {
           </div>
         </div>
       </div>
-    </div>
-
-    <div className=' absolute top-0 bottom-0 right-0 left-0 bg-gray-400 z-50 overflow-hidden'>
-      <div className='bg-white m-auto max-w-xl min-h-full'>
-
+      <div className='flex border-t'>
+        <button
+          className='btn btn-primary'
+          onClick={addPost}
+        >
+          Post
+        </button>
       </div>
     </div>
     </>

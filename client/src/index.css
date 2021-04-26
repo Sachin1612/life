@@ -11,9 +11,17 @@ textarea {
 }
 
 .icon {
-  @apply rounded-full h-6 w-6 p-1 inline-block;
+  @apply rounded-full w-6 p-1 inline-block;
 }
 
 .card {
   @apply bg-white rounded-lg shadow-md mb-4
+}
+
+.btn {
+  @apply rounded-md p-2 w-full my-2 text-center font-semibold shadow-md hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-opacity-75
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white focus:ring-blue-400 
 }
