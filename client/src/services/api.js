@@ -19,7 +19,11 @@ class Api {
   }
 
   async post(url, data) {
-    const res = await this.client.post(url, data)
+    const body = {
+      createdAt: new Date(),
+      ...data
+    }
+    const res = await this.client.post(url, body)
     console.log(url, res)
     return res.data;
   }
@@ -34,6 +38,12 @@ class Api {
     const res = await this.client.delete(url)
     console.log(url, res)
     return res.data;
+  }
+
+  // user
+  async login(userName, password) {
+    const res = await this.get(`/users?userName=${userName}`)
+    return res;
   }
 
   // Posts

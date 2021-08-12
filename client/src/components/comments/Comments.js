@@ -19,7 +19,7 @@ export const Comments = ({ postId }) => {
   
   return (
     comments.map(c => (
-      <div key={c.id} className='flex pb4'>
+      <div key={c.id} className='flex mt-2'>
         <div className='avatar '>
           {'S A'
             .split(' ')
