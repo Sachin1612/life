@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import api from '../../services/api'
+import GoogleLogin from "react-google-login";
 
 export const Login = () => {
   const [userName, setUserName] = useState('user1')
@@ -13,6 +14,11 @@ export const Login = () => {
 
     debugger
     localStorage.setItem('user', JSON.stringify(res))
+  }
+
+  const responseGoogle = (res) => {
+    console.log(res);
+    console.log(res.profileObj);
   }
 
   return (
@@ -42,6 +48,15 @@ export const Login = () => {
         >
           Login
         </button>
+
+        <GoogleLogin
+          clientId='828647835149-m5eaa3nfvnnsf99rbg67kjdrr3d2cmn8.apps.googleusercontent.com'
+          buttonText='Login'
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={'single_host_origin'}
+        />
+        
       </div>
     </div>
     </>
