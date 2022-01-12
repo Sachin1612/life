@@ -1,0 +1,22 @@
+https://dotnet.microsoft.com/learn/aspnet/hello-world-tutorial/create
+
+dotnet new webapi -n api
+cd api
+dotnet run
+
+dotnet add package Microsoft.EntityFrameworkCore.InMemory --prerelease
+
+
+builder.Services.AddCors(option => {
+    option.AddPolicy(name: MyAllowSpecificOrigins,
+    builder => {
+        builder.WithOrigins("http://localhost:5298", "https://localhost:7178");
+    });
+});
+
+app.UseCors(MyAllowSpecificOrigins);
+
+
+// Add developer certificate
+dotnet dev-certs https --trust
+
