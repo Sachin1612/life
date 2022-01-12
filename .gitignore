@@ -1,5 +1,5 @@
 # dependencies
-api/bin
-api/obj
-api/publish
+bin/
+obj/
+publish/
 .vscode/
