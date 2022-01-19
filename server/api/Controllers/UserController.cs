@@ -1,19 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
-
+using services.interfaces;
 namespace api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
-    [HttpGet]
-    public List<string> GetUsers()
+    private IUserService _userService;
+    public UserController(IUserService userService)
     {
-        return new List<string> 
-        {
-            "test",
-            "test2",
-            "Test3"
-        };
+        _userService = userService;
+    }
+
+    [HttpGet]
+    public async Task<dynamic> GetUsers()
+    {
+       
+       return await _userService.GetUsers();
+        
+    }
+
+    [HttpGet]
+    [Route("init")]
+    public async Task Init()
+    {
+        await _userService.Init();
+        
     }
 }

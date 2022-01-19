@@ -2,5 +2,6 @@ namespace services.interfaces;
 
 public interface IUserService
 {
-    Task GetUsers();
+    Task Init();
+    Task<dynamic> GetUsers();
 }
