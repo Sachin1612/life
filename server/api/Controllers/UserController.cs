@@ -15,9 +15,7 @@ public class UserController : ControllerBase
     [HttpGet]
     public async Task<dynamic> GetUsers()
     {
-       
        return await _userService.GetUsers();
-        
     }
 
     [HttpGet]
@@ -25,6 +23,5 @@ public class UserController : ControllerBase
     public async Task Init()
     {
         await _userService.Init();
-        
     }
 }

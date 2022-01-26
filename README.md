@@ -38,3 +38,6 @@ app.UseCors(MyAllowSpecificOrigins);
 
 ### Add developer certificate
 `dotnet dev-certs https --trust`
+
+### Create a class library project
+CMD - `dotnet new classlib -o initializer`
