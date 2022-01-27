@@ -9,4 +9,5 @@ public class SocialContext : DbContext
     }
 
     public DbSet<User> Users { get; set; } = null!;
+    public DbSet<Post> Posts { get; set; } = null!;
 }

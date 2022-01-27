@@ -20,6 +20,7 @@ public class DataInit : IHostedService
         {
             SocialContext _socialContext = scope.ServiceProvider.GetRequiredService<SocialContext>();
             _socialContext.Users.AddRange(UserData.Seed());
+            _socialContext.Posts.AddRange(PostData.Seed());
             await _socialContext.SaveChangesAsync();
         }
 
