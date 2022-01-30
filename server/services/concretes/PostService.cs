@@ -4,16 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace services.concretes;
 
-public class UserService : IUserService
+public class PostService : IPostService
 {
     private readonly SocialContext _db;
-    public UserService(SocialContext db)
+    public PostService(SocialContext db)
     {
         _db = db;
     }
-
-    public async Task<dynamic> GetUsers()
+    public async Task<IEnumerable<Post>> GetPosts()
     {
-        return await _db.Users.ToListAsync();
+        return await _db.Posts.ToListAsync();
     }
 }

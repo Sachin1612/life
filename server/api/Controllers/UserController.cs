@@ -17,11 +17,4 @@ public class UserController : ControllerBase
     {
        return await _userService.GetUsers();
     }
-
-    [HttpGet]
-    [Route("init")]
-    public async Task Init()
-    {
-        await _userService.Init();
-    }
 }

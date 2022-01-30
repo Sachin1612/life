@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(option => {
     option.AddPolicy(name: MyAllowSpecificOrigins,
     builder => {
-        builder.WithOrigins("http://localhost:5298", "https://localhost:7178");
+        builder.WithOrigins("http://localhost:3000", "http://localhost:5298", "https://localhost:7178");
     });
 });
 
@@ -21,6 +21,7 @@ builder.Services.AddDbContext<SocialContext>(opt => opt.UseInMemoryDatabase("InM
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IPostService, PostService>();
 builder.Services.AddHostedService<DataInit>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
