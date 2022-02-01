@@ -4,7 +4,7 @@ import { Navbar } from './components/layouts/Navbar';
 import { Login } from './components/login/Login';
 import { NetworkLayout } from './components/network/NetworkLayout';
 import { NewPost } from './components/posts/NewPost';
-import { Posts } from './components/posts/Posts';
+import Posts from './components/posts';
 
 function App() {
   return (
