@@ -5,6 +5,10 @@
 To add google login in react package -
 Run command `npm install react-google-login`
 
+### Add React Redux & Toolkit
+[Usage Summary](https://redux.js.org/tutorials/quick-start)
+Run Command `npm install @reduxjs/toolkit react-redux`
+
 
 # Server
 ### Add Extension
