@@ -1,10 +1,10 @@
 import { Switch, Route, BrowserRouter } from 'react-router-dom'
-import { FeedLayout } from './components/feed/FeedLayout';
-import { Navbar } from './components/layouts/Navbar';
-import { Login } from './components/login/Login';
-import { NetworkLayout } from './components/network/NetworkLayout';
-import { NewPost } from './components/posts/NewPost';
-import Posts from './components/posts';
+import { Navbar } from 'components/layouts/Navbar';
+import { FeedLayout } from 'components/feed/FeedLayout';
+import { Dashboard } from 'pages/dashboard/Dashboard';
+import { Login } from 'components/login/Login';
+import { NetworkLayout } from 'components/network/NetworkLayout';
+import { NewPost } from 'components/posts';
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         </div>
         <div className="md:col-span-2 p-8">
           <Switch>
-            <Route exact path="/" component={Posts} />
-            <Route exact path="/posts" component={Posts} />
+            <Route exact path="/" component={Dashboard} />
+            <Route exact path="/posts" component={Dashboard} />
             <Route exact path="/post/create" component={NewPost} />
             <Route exact path="/login" component={Login} />
           </Switch>
