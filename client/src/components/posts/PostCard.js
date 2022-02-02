@@ -1,9 +1,9 @@
 import React from 'react'
 import { ThumbUpIcon as ThumbUpIconOutline, ChatIcon, ShareIcon } from '@heroicons/react/outline'
-import { Likes } from '../likes/Likes'
-import api from '../../services/api'
-import { Comments } from '../comments/Comments'
-import { NewComment } from '../comments/NewComment'
+import { Comments } from 'components/comments/Comments'
+import { NewComment } from 'components/comments/NewComment'
+import { Likes } from 'components/likes/Likes'
+import api from 'services/api'
 
 export const PostCard = ({
   id,
@@ -25,7 +25,7 @@ export const PostCard = ({
         <div className='flex pb4'>
           <div className='avatar'>
             {sender
-              .split(' ')
+              ?.split(' ')
               .map(x => x.charAt(0).toUpperCase())
               .join('')}
           </div>

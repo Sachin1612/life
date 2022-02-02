@@ -1,1 +1,1 @@
-export {default} from './PostsContainer';
+export { NewPost } from './NewPost';
