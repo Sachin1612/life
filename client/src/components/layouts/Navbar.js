@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 export const Navbar = () => {
   return (
@@ -9,11 +9,11 @@ export const Navbar = () => {
           <Link to="/">lf</Link>
         </div>
         <ul className="flex flex-row my-auto">
-          <li className="pr-5"><Link to='/posts'>Posts </Link></li>
-          <li className="pr-5"><Link to='/chats'>Chats </Link></li>
-          <li className="pr-5"><Link to='/tranding'>Trendings </Link></li>
-          <li className="pr-5"><Link to='/signup'>Sign up</Link></li>
-          <li className="pr-5"><Link to='/login'>Login</Link></li>
+          <li className="pr-5"><NavLink  to='/posts'>Posts </NavLink></li>
+          <li className="pr-5"><NavLink to='/chats'>Chats </NavLink></li>
+          <li className="pr-5"><NavLink to='/bussiness'>Bussiness </NavLink></li>
+          <li className="pr-5"><NavLink to='/signup'>Sign up</NavLink></li>
+          <li className="pr-5"><NavLink to='/login'>Login</NavLink></li>
         </ul>
       </nav>
     </div>

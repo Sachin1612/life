@@ -1,0 +1,19 @@
+{
+  "bussiness": {
+    "redirectUrl": "https://google.com",
+    "name": "Test Show Room",
+    "logo": "img/restaurant-logo.jpg",
+    "cover": "img/restaurants.jpg"
+  },
+  "category": [
+    "Recommended",
+    "Gurukripa Special Meal",
+    "Quick Bites",
+    "Munchies",
+    "Starters",
+    "Soups",
+    "Main Course",
+    "Desserts",
+    "Beverage"
+  ]
+}
