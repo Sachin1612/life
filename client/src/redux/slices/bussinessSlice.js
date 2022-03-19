@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { bussiness, category } from 'test/data';
+import { bussiness, category, items } from 'test/data';
 
 const name = 'bussiness';
 const bussinessSlice = createSlice({
   name,
-  initialState: { bussiness, category },
+  initialState: { bussiness, category, items },
   reducers: {
 
   },

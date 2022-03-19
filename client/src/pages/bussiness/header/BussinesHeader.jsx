@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const BussinesHeader = (props) => {
   console.log(props)
   return (
+    <div className='sticky top-0'>
     <div className='relative'>
       <img src={props.cover} className='object-cover w-full h-52' />
       <h1 className='absolute top-0 divide-opacity-90 text-white h-full w-full pl-96 pt-10 text-2xl' style={{
@@ -13,7 +14,7 @@ const BussinesHeader = (props) => {
       }} >{props.name}</h1>
       <img src={props.logo} className='absolute -bottom-16 rounded-full left-2/4 w-32 shadow-2xl'/>
     </div>
-
+    </div>
   );
 };
 
