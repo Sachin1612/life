@@ -1,5 +1,4 @@
-export {posts} from './post.json';
-export {users} from './user.json';
-export {likes} from './likes.json';
-export {bussiness, category, items} from './bussiness.json';
-
+export * from "./post";
+export * from "./user";
+export * from "./likes";
+export * from "./bussiness";

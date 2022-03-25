@@ -1,10 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
-import bussiness from './slices/bussinessSlice';
-import post from './slices/postSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import bussiness from "./slices/bussinessSlice";
+import post from "./slices/postSlice";
+import user from "./slices/userSlice";
 
 export default configureStore({
-    reducer: {
-        ...post,
-        ...bussiness
-    }
+  reducer: {
+    ...user,
+    ...post,
+    ...bussiness,
+  },
 });
