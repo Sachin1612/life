@@ -9,6 +9,9 @@ Run command `npm install react-google-login`
 [Usage Summary](https://redux.js.org/tutorials/quick-start)
 Run Command `npm install @reduxjs/toolkit react-redux`
 
+### Add tailwind css 
+[Usage Summary](https://tailwindcss.com/docs/guides/create-react-app)
+Run Command `npm install -D tailwindcss postcss autoprefixer`
 
 # Server
 ### Add Extension
