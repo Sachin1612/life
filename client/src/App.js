@@ -1,4 +1,4 @@
-import { Switch, Route, BrowserRouter, Router } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Navbar } from 'components/layouts/Navbar';
 import { FeedLayout } from 'components/feed/FeedLayout';
 import { Dashboard } from 'pages/dashboard/Dashboard';
@@ -13,15 +13,14 @@ function App() {
   return (
     <BrowserRouter>
      
-          <Switch>
-            
-            <LifeLayout exact path="/" component={Dashboard} />
-            <LifeLayout exact path="/posts" component={Dashboard} />
-            <LifeLayout exact path="/post/create" component={NewPost} />
-            <LifeLayout exact path="/login" component={Login} />
+          <Routes>
+            <Route exact path='/' element={<LifeLayout component={Dashboard} />} />
+            <Route exact path='/posts' element={<LifeLayout component={Dashboard} />} />
+            <Route exact path='/post/create' element={<LifeLayout component={NewPost} />} />
 
-            <BussinessLayoutRoutes exact path='/bussiness' component={BussinessDashboard} />
-          </Switch>
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/bussiness' element={<BussinessDashboard />} />
+          </Routes>
     </BrowserRouter>
   );
 }

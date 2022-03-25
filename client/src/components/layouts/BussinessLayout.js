@@ -2,12 +2,9 @@
 import React from 'react'
 import { Route } from 'react-router-dom';
 
-const BussinessLayoutRoutes = ({ component: Component, ...rest }) => {
+const BussinessLayoutRoutes = ({ component: Component }) => {
     return (
-        <Route {...rest} render={props => (
-                <Component {...props} />
-        
-        )} />
+        <Component />
     )
 }
 
