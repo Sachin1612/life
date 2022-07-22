@@ -21,11 +21,11 @@ const BussinessCategories = () => {
 
 const Item = item => {
   return (
-    <div className='flex flex-row border-b-2'>
-      <div className='flex-col w-8/12'>
+    <div className='flex flex-row border-b-2 py-4'>
+      <div className='w-8/12'>
         <strong>{item.name}</strong><br />
-        <span>{item.price}</span>
-        <p>{item.description}</p>
+        <span>₹{item.price}</span>
+        <p className='text-xs'>{item.description}</p>
       </div>
       <div className='flex-col w-4/12 right-0'>
         {item.image && <div className='rounded-xl w-36 h-24 overflow-hidden'><img className='p-2 h-auto w-[calc(100%+2rem)]' src={item.image} /></div>}

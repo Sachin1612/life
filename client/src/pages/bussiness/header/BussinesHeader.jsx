@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const BussinesHeader = (props) => {
   console.log(props)
   return (
     <div className='sticky top-0'>
+      <Link to={'/posts'} className=''>&#8592;</Link>
     <div className='relative'>
       <img src={props.cover} className='object-cover w-full h-52' />
       <h1 className='absolute top-0 divide-opacity-90 text-white h-full w-full pl-96 pt-10 text-2xl' style={{
